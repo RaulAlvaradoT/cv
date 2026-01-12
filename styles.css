@@ -202,11 +202,11 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 95px;
 }
 
 .nav-logo img {
-  height: 70px;
+  height: 95px;
   width: auto;
   transition: transform var(--transition-fast);
   vertical-align: middle;
