@@ -1173,28 +1173,66 @@ section {
    Responsive Design
    =================================== */
 @media (max-width: 768px) {
-  .nav-menu {
-    display: flex;
-    flex-direction: row;
-    gap: var(--spacing-sm);
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .nav-menu::-webkit-scrollbar {
-    display: none;
-  }
-
-  .nav-link {
-    padding: 0.5rem 1rem;
-    white-space: nowrap;
-    font-size: 0.9rem;
+  .nav-container {
+    padding-right: 80px;
   }
 
   .hamburger {
+    display: flex;
+    z-index: 1001;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
     display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 95px;
+    left: 0;
+    width: 100%;
+    background: rgba(30, 30, 30, 0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-sm) 0;
+    gap: 0;
+    z-index: 999;
+  }
+
+  [data-theme="light"] .nav-menu {
+    background: rgba(255, 255, 255, 0.97);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    white-space: nowrap;
+  }
+
+  .nav-menu li:last-child .nav-link {
+    border-bottom: none;
   }
 
   .hero-logo img {
