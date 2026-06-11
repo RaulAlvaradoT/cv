@@ -1335,3 +1335,73 @@ code {
   color: var(--accent-orange);
   font-size: 0.9em;
 }
+
+/* ===================================
+   Extra / Collapsible Section
+   =================================== */
+.extra-section {
+  margin-top: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.extra-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  list-style: none;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  user-select: none;
+}
+
+.extra-summary::-webkit-details-marker {
+  display: none;
+}
+
+.extra-summary:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.extra-summary svg {
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.extra-section[open] .extra-summary svg {
+  transform: rotate(180deg);
+}
+
+.extra-section .timeline-responsibilities {
+  padding: 0.75rem 1rem 0.5rem;
+  background: var(--bg-secondary);
+}
+
+/* Extra skill category badge */
+.skill-category.extra {
+  position: relative;
+  opacity: 0.82;
+}
+
+.skill-category.extra::after {
+  content: 'EXTRA';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  background: var(--bg-tertiary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
